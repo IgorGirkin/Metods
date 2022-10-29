@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 public class Main {
     public static void leapYear (int year) {
@@ -8,25 +9,13 @@ public class Main {
         }
     }
     public static void choosingSmartphoneOS (int clientDeviceYear,int clientOS) {
-        if (clientDeviceYear<2007) {
-            System.out.println("Купите новый девайс.");
-        } else if (clientOS == 0&&clientDeviceYear<2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по " +
+         int currentYear = LocalDate.now().getYear();
+         if (clientOS == 0&&clientDeviceYear<currentYear) {
+                System.out.println("Установите lite-версию приложения для iOS по " +
                         "ссылке!");
-            } else  if (clientOS == 0)
-            {
-                System.out.println("Установите версию приложения для iOS по ссылке!");
-             } else if (clientDeviceYear<2008&&clientOS == 1) {
-           System.out.println("Купите новый девайс.");
-        }
-        else if (clientOS == 1&&clientDeviceYear<2015) {
-            System.out.println("Установите облегченную версию приложения для Android по" +
+             } else if (clientOS == 1&&clientDeviceYear<currentYear) {
+            System.out.println("Установите lite-версию приложения для Android по" +
                     " ссылке!");
-        } else if (clientOS==1) {
-            System.out.println("Установите версию приложения для Android по " +
-                    "ссылке!");
-        } else {
-            System.out.println("Значение не верно, повторите ввод данных.");
         }
     }
     public static int sumOfDeliveryDays (int num) {
